@@ -27,16 +27,16 @@ const purchases =[
 
 //let cashback = 0
 
-const regularrPurchasesPercent = 0.01;
+const regularPurchasesPercent = 0.01;
 
-const increatPurchasesPercent = 0.05;
+const increasedPurchasesPercent = 0.05;
 
-const spesialPurchasesPercent = 0.3;
+const specialPurchasesPercent = 0.3;
 
 cashbacklimit = 3000;
 
 
-let predrictCashback = 0;
+let predictCashback = 0;
 
 for(const purchase of purchases) { 
     
@@ -44,25 +44,28 @@ for(const purchase of purchases) {
     console.log(purchase.category);
     
     if(purchase.category == REGULAR_CATEGORY)  {
-        predrictCashback += purchase.amound * regularPurchasesPercent
+        predictCashback += purchase.amound * regularPurchasesPercent;
     }
 
-    if(purchase.category == INCREASED_CATEGORI) {
-        predrictCashback += purchase.amound * increasedPurchasesPersent;
+    if(purchase.category == INCREASED_CATEGORY) {
+        predictCashback += purchase.amound * increasedPurchasesPercent;
     } 
-    if (purchase.category == SPECIAL_CATEGORI) {
+    if (purchase.category == SPECIAL_CATEGORY) {
        predictCashback  += purchase.amound * specialPurchasesPercent;
     }
 
 }; 
 
 //Это первый способ 
+
+
+
 let cashback;
 
-if(predrictCashback > 3000){
+if(predictCashback > 3000){
     cashback = 3000;
-} else if(predrictCashback <= 3000){
-    cashback = predrictCashback
+} else if(predictCashback <= 3000){
+    cashback = predictCashback
 }
 
 /*
@@ -73,5 +76,5 @@ if(cashback > 3000){
     cashback = 3000;
 }
 */
-console.log( predrictCashback);
+console.log( predictCashback);
 console.log( cashback)
