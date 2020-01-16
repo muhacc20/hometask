@@ -1,4 +1,4 @@
-console.log ('worked')
+console.log('worked')
 
 
 
@@ -6,19 +6,19 @@ const REGULAR_CATEGORY = 'regular';
 const INCREASED_CATEGORY = 'increased';
 const SPECIAL_CATEGORY = 'special';
 
-const purchases =[
+const purchases = [
     {
         amound: 1000,
         category: REGULAR_CATEGORY,
     },
     {
         amound: 10000,
-        category:INCREASED_CATEGORY,   
-    }, 
+        category: INCREASED_CATEGORY,
+    },
     {
         amound: 1000,
-        category:REGULAR_CATEGORY,
-    },  
+        category: REGULAR_CATEGORY,
+    },
     {
         amound: 1000,
         category: SPECIAL_CATEGORY,
@@ -38,43 +38,37 @@ cashbacklimit = 3000;
 
 let predictCashback = 0;
 
-for(const purchase of purchases) { 
-    
+for (const purchase of purchases) {
+
     console.log(purchase.amound);
-    console.log(purchase.category);
+    console.log(purchase.category) 
     
-    if(purchase.category == REGULAR_CATEGORY)  {
+
+    if (purchase.category == REGULAR_CATEGORY) {
         predictCashback += purchase.amound * regularPurchasesPercent;
-    }
+    } else
 
-    if(purchase.category == INCREASED_CATEGORY) {
-        predictCashback += purchase.amound * increasedPurchasesPercent;
-    } 
-    if (purchase.category == SPECIAL_CATEGORY) {
-       predictCashback  += purchase.amound * specialPurchasesPercent;
-    }
+        if (purchase.category == INCREASED_CATEGORY) {
+            predictCashback += purchase.amound * increasedPurchasesPercent;
+        } else
+            if (purchase.category == SPECIAL_CATEGORY) {
+                predictCashback += purchase.amound * specialPurchasesPercent;
+            }
 
-}; 
+};
 
-//Это первый способ 
 
 
 
 let cashback;
 
-if(predictCashback > 3000){
+if (predictCashback > 3000) {
     cashback = 3000;
-} else if(predictCashback <= 3000){
+} else if (predictCashback <= 3000) {
     cashback = predictCashback
 }
 
-/*
-// 2 способ
-let cashback = predrictCashback;
 
-if(cashback > 3000){
-    cashback = 3000;
-}
-*/
-console.log( predictCashback);
-console.log( cashback)
+
+console.log(predictCashback);
+console.log(cashback)
