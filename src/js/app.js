@@ -33,7 +33,7 @@ const increasedPurchasesPercent = 0.05;
 
 const specialPurchasesPercent = 0.3;
 
-cashbacklimit = 3000;
+const cashbacklimit = 3000;
 
 
 let predictCashback = 0;
@@ -62,9 +62,9 @@ for (const purchase of purchases) {
 
 let cashback;
 
-if (predictCashback > 3000) {
-    cashback = 3000;
-} else if (predictCashback <= 3000) {
+if (predictCashback > cashbacklimit) {
+    cashback = cashbacklimit;
+} else if (predictCashback <= cashbacklimit) {
     cashback = predictCashback
 }
 
@@ -72,3 +72,4 @@ if (predictCashback > 3000) {
 
 console.log(predictCashback);
 console.log(cashback)
+
