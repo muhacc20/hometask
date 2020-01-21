@@ -71,5 +71,5 @@ if (predictCashback > cashbacklimit) {
 
 
 console.log(predictCashback);
-console.log(cashback)
+console.log(cashback);
 
